@@ -1,0 +1,10 @@
+
+> accounts-dashboard@0.1.0 dev
+> next dev
+
+Γû▓ Next.js 16.1.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://10.124.90.247:3000
+
+Γ£ô Starting...
+Γ£ô Ready in 1539ms

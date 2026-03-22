@@ -1,0 +1,188 @@
+ΓòöΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòù
+Γòæ     COMPREHENSIVE API TEST SUITE                       Γòæ
+Γòæ     Testing: Auth, Users, Staff, Entries               Γòæ
+Γòæ     Server:  http://localhost:5000                      Γòæ
+ΓòÜΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓò¥
+
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+≡ƒÅÑ HEALTH CHECK
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+Γ£à GET /api/health - Server health check
+   Status: 200 | Response: {"success":true,"message":"Accounts Management System API is running","timestamp":"2026-03-11T14:32:14.371Z","environment":"development"}
+
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+≡ƒöÉ AUTH ROUTES (/api/auth)
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+Γ£à POST /api/auth/register - Register new user
+   Status: 201 | Response: {"success":true,"message":"Registration successful"}
+Γ£à POST /api/auth/register - Missing fields (expect 400)
+   Status: 400 | Response: {"success":false,"message":"All fields required"}
+Γ£à POST /api/auth/register - Duplicate user (expect 400)
+   Status: 400 | Response: {"success":false,"message":"User already exists"}
+Γ£à POST /api/auth/login - Valid credentials
+   Status: 200 | Response: {"success":true,"message":"Login successful","data":{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzUsInVzZXJuYW1lIjoiYXBpX3Rlc3Rlcl8xNzczMjM5NTM0OTA4Iiwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzczMjM5N
+Γ£à POST /api/auth/login - Invalid password (expect 401)
+   Status: 401 | Response: {"success":false,"message":"Invalid credentials"}
+Γ£à POST /api/auth/login - Missing fields (expect 400)
+   Status: 400 | Response: {"success":false,"message":"Username and password required"}
+Γ£à POST /api/auth/login - Non-existent user (expect 401)
+   Status: 401 | Response: {"success":false,"message":"Invalid credentials"}
+Γ£à GET /api/auth/me - Get current user (with token)
+   Status: 200 | Response: {"success":true,"data":{"username":"api_tester_1773239534908","role":"Admin"}}
+Γ£à GET /api/auth/me - No token (expect 401)
+   Status: 401 | Response: {"success":false,"message":"No token provided, authorization denied"}
+Γ£à GET /api/auth/me - Invalid token (expect 401)
+   Status: 401 | Response: {"success":false,"message":"Token is invalid or expired"}
+Γ£à POST /api/auth/forgot-password - With valid email
+   Status: 200 | Response: {"success":true,"message":"Reset token generated","token":"fd4207f09e05638210e7fe4ad33bb469cc62b29403fe2b42181b306692a42bde"}
+Γ£à POST /api/auth/reset-password - Invalid token (expect 400)
+   Status: 400 | Response: {"success":false,"message":"Invalid token"}
+Γ£à POST /api/auth/logout - Logout (with token)
+   Status: 200 | Response: {"success":true,"message":"Logged out"}
+
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+≡ƒæÑ USER ROUTES (/api/users)
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+Γ£à GET /api/users - Get all users
+   Status: 200 | Response: {"success":true,"count":34,"data":[{"id":35,"username":"api_tester_1773239534908","role":"Admin","status":"Active","permissions":{},"edit_access":{},"delete_access":{},"created_date":"2026-03-10T18:30
+Γ£à GET /api/users - No token (expect 401)
+   Status: 401 | Response: {"success":false,"message":"No token provided, authorization denied"}
+Γ£à POST /api/users - Create user (Admin)
+   Status: 201 | Response: {"success":true,"message":"User created successfully","data":{"id":36}}
+Γ£à POST /api/users - Duplicate user (expect 400)
+   Status: 400 | Response: {"success":false,"message":"Username already exists"}
+Γ£à POST /api/users - No token (expect 401)
+   Status: 401 | Response: {"success":false,"message":"No token provided, authorization denied"}
+Γ£à GET /api/users/pending - Get pending users
+   Status: 200 | Response: {"success":true,"count":7,"data":[{"id":36,"username":"created_user_1773239535480","email":null,"created_date":"2026-03-10T18:30:00.000Z","approval_status":"Pending"},{"id":1,"username":"testuser1","e
+Γ£à POST /api/users/36/approve - Approve user
+   Status: 200 | Response: {"success":true,"message":"User approved"}
+Γ£à POST /api/users/99999/reject - Reject non-existent user
+   Status: 200 | Response: {"success":true,"message":"User rejected"}
+Γ£à POST /api/users/1/approve - No token (expect 401)
+   Status: 401 | Response: {"success":false,"message":"No token provided, authorization denied"}
+
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+≡ƒæ╖ STAFF ROUTES (/api/staff)
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+Γ£à GET /api/staff - Get all staff
+   Status: 200 | Response: {"success":true,"count":6,"data":[{"id":8,"staff_id":"1234","name":"aswin s","age":18,"gender":"Male","designation":"cook","mobile_no":"9876543210","introducer":"Admin","introducer_id":"1234","status"
+Γ£à GET /api/staff?status=active - Get active staff
+   Status: 200 | Response: {"success":true,"count":5,"data":[{"id":8,"staff_id":"1234","name":"aswin s","age":18,"gender":"Male","designation":"cook","mobile_no":"9876543210","introducer":"Admin","introducer_id":"1234","status"
+Γ£à GET /api/staff - No token (expect 401)
+   Status: 401 | Response: {"success":false,"message":"No token provided, authorization denied"}
+Γ£à POST /api/staff - Create new staff
+   Status: 201 | Response: {"success":true,"message":"Staff member created successfully","data":{"id":11}}
+Γ£à POST /api/staff - Missing fields (expect 400)
+   Status: 400 | Response: {"success":false,"message":"Please provide all required fields"}
+Γ£à POST /api/staff - Duplicate staff ID (expect 400)
+   Status: 400 | Response: {"success":false,"message":"Staff ID already exists"}
+Γ£à POST /api/staff - No token (expect 401)
+   Status: 401 | Response: {"success":false,"message":"No token provided, authorization denied"}
+Γ£à GET /api/staff/11 - Get staff by ID
+   Status: 200 | Response: {"success":true,"data":{"id":11,"staff_id":"STF1773239535755","name":"Test Staff Member","age":30,"gender":"Male","designation":"Tester","mobile_no":"9876543210","introducer":"Admin","introducer_id":"
+Γ£à GET /api/staff/99999 - Non-existent staff (expect 404)
+   Status: 404 | Response: {"success":false,"message":"Staff member not found"}
+Γ£à PUT /api/staff/11 - Update staff
+   Status: 200 | Response: {"success":true,"message":"Staff member updated successfully"}
+Γ£à PUT /api/staff/99999 - Non-existent staff (expect 404)
+   Status: 404 | Response: {"success":false,"message":"Staff member not found"}
+Γ£à PUT /api/staff/11 - No valid fields (expect 400)
+   Status: 400 | Response: {"success":false,"message":"No valid fields to update"}
+Γ£à PATCH /api/staff/11/status - Change to Resigned
+   Status: 200 | Response: {"success":true,"message":"Staff status changed to Resigned successfully"}
+Γ£à PATCH /api/staff/11/status - Change back to Active
+   Status: 200 | Response: {"success":true,"message":"Staff status changed to Active successfully"}
+Γ£à PATCH /api/staff/11/status - Invalid status (expect 400)
+   Status: 400 | Response: {"success":false,"message":"Invalid status. Must be Active or Resigned"}
+Γ£à DELETE /api/staff/11 - Delete staff
+   Status: 200 | Response: {"success":true,"message":"Staff member deleted successfully"}
+Γ£à DELETE /api/staff/99999 - Non-existent staff (expect 404)
+   Status: 404 | Response: {"success":false,"message":"Staff member not found"}
+Γ£à DELETE /api/staff/1 - No token (expect 401)
+   Status: 401 | Response: {"success":false,"message":"No token provided, authorization denied"}
+
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+≡ƒôÆ ENTRIES ROUTES (/api/entries)
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+Γ£à GET /api/entries - Get all entries
+   Status: 200 | Response: {"success":true,"count":3,"data":[{"id":5,"date":"2024-01-31T18:30:00.000Z","cash":"1000.00","bank":"2000.00","sales":"5000.00","mutton":"200.00","chicken":"300.00","grocery":"100.00","flower":"50.00"
+Γ£à GET /api/entries?startDate=2024-01-01&endDate=2024-12-31 - Date filter
+   Status: 200 | Response: {"success":true,"count":3,"data":[{"id":5,"date":"2024-01-31T18:30:00.000Z","cash":"1000.00","bank":"2000.00","sales":"5000.00","mutton":"200.00","chicken":"300.00","grocery":"100.00","flower":"50.00"
+Γ£à GET /api/entries - No token (expect 401)
+   Status: 401 | Response: {"success":false,"message":"No token provided, authorization denied"}
+Γ£à POST /api/entries - Create entry (date: 2099-12-14)
+   Status: 201 | Response: {"success":true,"message":"Entry created","data":{"id":9,"date":"2099-12-13T18:30:00.000Z","cash":"15000.00","bank":"25000.00","sales":"40000.00","mutton":"5000.00","chicken":"3000.00","grocery":"2000
+Γ£à POST /api/entries - Missing date (expect 400)
+   Status: 400 | Response: {"success":false,"message":"Date is required"}
+Γ£à POST /api/entries - Duplicate date (expect 400)
+   Status: 400 | Response: {"success":false,"message":"Entry already exists"}
+Γ£à POST /api/entries - No token (expect 401)
+   Status: 401 | Response: {"success":false,"message":"No token provided, authorization denied"}
+Γ£à GET /api/entries/date/2099-12-14 - Get entry by date
+   Status: 200 | Response: {"success":true,"data":{"id":9,"date":"2099-12-14","cash":"15000.00","bank":"25000.00","sales":"40000.00","mutton":"5000.00","chicken":"3000.00","grocery":"2000.00","flower":"500.00","leaf":"300.00","
+Γ£à GET /api/entries/date/1900-01-01 - Non-existent date (expect 404)
+   Status: 404 | Response: {"success":false,"message":"No entry found"}
+Γ£à PUT /api/entries/9 - Update entry
+   Status: 200 | Response: {"success":true,"message":"Entry updated","data":{"id":9,"date":"2099-12-13T18:30:00.000Z","cash":"20000.00","bank":"30000.00","sales":"50000.00","mutton":"5000.00","chicken":"3000.00","grocery":"2000
+Γ£à PUT /api/entries/99999 - Non-existent entry (expect 404)
+   Status: 404 | Response: {"success":false,"message":"Entry not found"}
+Γ£à PUT /api/entries/9 - No valid fields (expect 400)
+   Status: 400 | Response: {"success":false,"message":"No valid fields to update"}
+Γ£à DELETE /api/entries/9 - Delete entry
+   Status: 200 | Response: {"success":true,"message":"Entry deleted"}
+Γ£à DELETE /api/entries/99999 - Non-existent entry (expect 404)
+   Status: 404 | Response: {"success":false,"message":"Entry not found"}
+Γ£à DELETE /api/entries/1 - No token (expect 401)
+   Status: 401 | Response: {"success":false,"message":"No token provided, authorization denied"}
+
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+≡ƒÜ½ 404 HANDLER
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+Γ£à GET /api/nonexistent - Non-existent route (expect 404)
+   Status: 404 | Response: {"success":false,"message":"Route not found"}
+
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+≡ƒôè TEST RESULTS SUMMARY
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+
+  Total Tests:  57
+  Γ£à Passed:    57
+  Γ¥î Failed:    0
+  Pass Rate:    100.0%
+
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+  API ENDPOINT MAP
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+
+  AUTH:
+    POST /api/auth/register
+    POST /api/auth/login
+    GET  /api/auth/me
+    POST /api/auth/logout
+    POST /api/auth/forgot-password
+    POST /api/auth/reset-password
+
+  USERS:
+    GET  /api/users
+    POST /api/users
+    GET  /api/users/pending
+    POST /api/users/:id/approve
+    POST /api/users/:id/reject
+
+  STAFF:
+    GET    /api/staff
+    GET    /api/staff/:id
+    POST   /api/staff
+    PUT    /api/staff/:id
+    DELETE /api/staff/:id
+    PATCH  /api/staff/:id/status
+
+  ENTRIES:
+    GET    /api/entries
+    GET    /api/entries/date/:date
+    POST   /api/entries
+    PUT    /api/entries/:id
+    DELETE /api/entries/:id
+
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
